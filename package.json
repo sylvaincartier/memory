@@ -40,6 +40,8 @@
     "dirty-chai": "^2.0.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "sinon": "^7.5.0",
+    "sinon-chai": "^3.3.0"
   }
 }
