@@ -8,8 +8,17 @@ import Card from './Card'
 describe('<Card/>', () => {
     it('should trigger its "onclick" prop when clicked', () => {
         const onClick = sinon.spy()
-        const wrapper = shallow(<Card card="1" feedback="hidden" index={ 0 } onClick={onClick}/>)
+        const wrapper = shallow(<Card card="😁" feedback="hidden" index={ 0 } onClick={onClick}/>)
         wrapper.simulate('click');
         expect(onClick).to.have.been.calledWith(0)
-    } )
+    })
+
+    it('should match its reference snapshot', () => {
+        const onClick = sinon.spy()
+        const wrapper = shallow(
+          <Card card="😁" feedback="hidden" index={0} onClick={onClick} />
+        )
+      
+        expect(wrapper).to.matchSnapshot()
+      })
 })

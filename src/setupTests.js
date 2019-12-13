@@ -5,11 +5,15 @@ import createChaiEnzyme from 'chai-enzyme'
 import createChaiJestDiff from 'chai-jest-diff'
 import dirtyChai from 'dirty-chai'
 import sinonchai from 'sinon-chai'
+import chaiJestSnapshot from 'chai-jest-snapshot'
+import enzymeToJSON from 'enzyme-to-json/serializer'
 
 chai
   .use(dirtyChai)
   .use(createChaiJestDiff())
+  .use(chaiJestSnapshot)
   .use(createChaiEnzyme())
   .use(sinonchai)
 
 configureEnzyme({ adapter: new Adapter() })
+expect.addSnapshotSerializer(enzymeToJSON)
