@@ -13,7 +13,7 @@ const Card = ({ card, feedback, index, onClick }) =>
  </div>
 
 
-Card.protoTypes = {
+Card.propTypes = {
     card: PropTypes.string.isRequired,
     feedback: PropTypes.oneOf([
         'hidden',
